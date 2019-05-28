@@ -40,8 +40,8 @@ L.TileLayer.WMTS = L.TileLayer.extend({
         var tileSize = this.options.tileSize;
         var nwPoint = tilePoint.multiplyBy(tileSize);
         //+/-1 in order to be on the tile
-        var nwPoint.x+=1;
-        var nwPoint.y-=1;
+        nwPoint.x+=1;
+        nwPoint.y-=1;
         var sePoint = nwPoint.add(new L.Point(tileSize, tileSize));
         var nw = crs.project(map.unproject(nwPoint, zoom));
         var se = crs.project(map.unproject(sePoint, zoom));
